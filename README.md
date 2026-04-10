@@ -75,3 +75,4 @@ I was responsible for designing and developing the **Instructor functionalities*
 
 ## 📎 Notes
 This project was developed as part of a group assignment. Each member was responsible for different modules.
+Use email: instructor@museum.edu  /  password: instructor123
