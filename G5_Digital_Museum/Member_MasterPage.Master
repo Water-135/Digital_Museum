@@ -1,0 +1,173 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Member_MasterPage.master.cs" Inherits="G5_Digital_Museum.Member_MasterPage" %>
+
+<!doctype html>
+<html lang="en">
+<head runat="server">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Digital Museum: Nanjing Massacre - An educational web-based learning platform preserving the memory and history of the Nanjing Massacre (1937-1938)." />
+    <meta name="keywords" content="Nanjing Massacre, digital museum, WWII history, education, memorial" />
+    <meta name="author" content="Group 5 - WAPP Assignment" />
+    <title>Digital Museum: Nanjing Massacre</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Source+Sans+Pro:wght@300;400;600;700&display=swap" rel="stylesheet" />
+
+    <!-- External CSS -->
+    <link href="<%= ResolveUrl("~/CSS/Member.css") %>" rel="stylesheet" />
+
+    <!-- Internal CSS (demonstrating internal CSS usage) -->
+    <style type="text/css">
+        /* Internal CSS: Page-transition overlay */
+        .page-transition-overlay {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: #0a0a0a;
+            z-index: 9999;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+        /* Internal CSS: Memorial candle icon animation */
+        .candle-glow {
+            display: inline-block;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+        @keyframes glow {
+            from { text-shadow: 0 0 4px rgba(196, 164, 74, 0.4); }
+            to   { text-shadow: 0 0 12px rgba(196, 164, 74, 0.8); }
+        }
+    </style>
+
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+
+<body>
+    <form id="form1" runat="server">
+
+        <!-- Skip to Content (Accessibility) -->
+        <a class="skip-link" href="#main-content">Skip to content</a>
+
+        <!-- ==================== HEADER ==================== -->
+        <header class="site-header" role="banner">
+            <div class="header-inner">
+                <!-- Logo -->
+                <a href="Member_HomePage.aspx" class="brand-wrap">
+    <span class="brand-icon">M</span>
+    <span class="brand-text">
+        <span class="brand-title">Digital Museum</span>
+        <span class="brand-sub">NANJING MASSACRE 1937</span>
+    </span>
+</a>
+
+                <!-- Mobile Menu Toggle -->
+                <button class="menu-toggle" id="menuToggle" type="button" aria-label="Toggle Navigation" aria-expanded="false">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/>
+                    </svg>
+                </button>
+
+                <!-- Primary Navigation -->
+                <nav class="primary-nav" id="primaryNav" aria-label="Main Navigation" role="navigation">
+                    <ul class="nav-list">
+    <li><a href="Member_HomePage.aspx">Home</a></li>
+    <li><a href="Member_AllExhibitions.aspx">Exhibition</a></li>
+    <li><a href="Member_Modules.aspx">Modules</a></li>
+    <li><a href="Member_Quiz.aspx">Quiz</a></li>
+    <li><a href="Member_CommentAndReview.aspx">Comment</a></li>
+    <li><a href="Member_SaveToFavourite.aspx">Favourite</a></li>
+    
+    <li>
+    <asp:HyperLink ID="lnkManageProfile"
+        runat="server"
+        NavigateUrl="Member_ManageProfile.aspx">
+        Manage Profile
+    </asp:HyperLink>
+
+
+    </li>
+   
+
+    <!-- Search icon button -->
+    <li>
+        <a href="Member_BrowseAndSearch.aspx" class="elementor-item nav-icon-btn" aria-label="Browse and Search">
+            <i data-lucide="search"></i>
+        </a>
+    </li>
+
+    <li><span class="nav-divider"></span></li>
+
+    <!-- Login button -->
+    <li>
+    <asp:LinkButton ID="btnLoginLogout"
+        runat="server"
+        CssClass="elementor-item btn-login"
+        OnClick="btnLoginLogout_Click">
+    </asp:LinkButton>
+</li>
+</ul>
+                </nav>
+            </div>
+        </header>
+
+        <!-- ==================== MAIN CONTENT ==================== -->
+        <main id="main-content" role="main"class="main-content">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+        </main>
+
+        <!-- ==================== FOOTER ==================== -->
+        <footer class="site-footer" role="contentinfo">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Digital Museum</h4>
+                    <p>
+                        An educational web-based platform dedicated to preserving the memory 
+                        of the Nanjing Massacre (December 1937 &ndash; January 1938). This museum 
+                        serves as a digital learning resource for students and researchers worldwide.
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4>Explore</h4>
+                    <ul>
+                        <li><a href="<%= ResolveUrl("~/Guest_Homepage.aspx") %>"></a></li>
+                        <li><a href="Guest_Timeline.aspx">Timeline</a></li>
+                        <li><a href="Guest_Gallery.aspx">Gallery</a></li>
+                        <li><a href="Guest_Resources.aspx">Learning Resources</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Engage</h4>
+                    <ul>
+                        <li><a href="Guest_About.aspx">About This Museum</a></li>
+                        <li><a href="Guest_Feedback.aspx">Guestbook</a></li>
+                        <li><a href="Member_Registration.aspx">Create Account</a></li>
+                        <li><a href="Main_LoginPage.aspx">Sign In</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Educational Note</h4>
+                    <p>
+                        This website is a university project created for educational purposes 
+                        (CT050-3-2-WAPP). Content is presented with respect for all victims.
+                    </p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2025 Digital Museum: Nanjing Massacre &mdash; Group 5 | 
+                CT050-3-2-WAPP | Asia Pacific University
+            </div>
+        </footer>
+
+
+    </form>
+
+    <!-- External JavaScript -->
+    <script src="<%= ResolveUrl("~/js/JavaScript.js") %>"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script> lucide.createIcons({});    </script>
+</body>
+</html>
+

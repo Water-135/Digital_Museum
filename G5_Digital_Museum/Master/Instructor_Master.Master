@@ -1,0 +1,99 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Instructor_Master.master.cs" Inherits="G5_Digital_Museum.Master.Instructor_Master" %>
+
+<!DOCTYPE html>
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%: Page.Title %> -- Digital Museum Instructor</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&amp;family=Source+Sans+Pro:wght@300;400;600&amp;display=swap" rel="stylesheet" />
+    <link id="lnkCSS" runat="server" href="~/CSS/Instructor_css.css" rel="stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server" />
+</head>
+<body>
+
+    <form id="frmMain" runat="server">
+
+        <header class="topbar" id="topbar">
+            <div class="topbar-inner">
+
+                <a href="<%= ResolveUrl("~/Instructor_Homepage.aspx") %>" class="brand">
+                    <div class="brand-mark">M</div>
+                    <div class="brand-text">
+                        Digital Museum
+                        <small>Nanjing Massacre 1937</small>
+                    </div>
+                </a>
+
+                <nav class="topnav" id="topnav">
+                    <a href="<%= ResolveUrl("~/Instructor_Homepage.aspx") %>"
+                       class="nav-link <%= GetNavClass("Instructor_Homepage") %>">Dashboard</a>
+
+                    <a href="<%= ResolveUrl("~/Instructor_Exhibition_Manage.aspx") %>"
+                       class="nav-link <%= GetNavClass("Instructor_Exhibition_Manage") %>">Exhibitions</a>
+
+                    <a href="<%= ResolveUrl("~/Instructor_Module_Manage.aspx") %>"
+                       class="nav-link <%= GetNavClass("Instructor_Module_Manage") %>">Modules</a>
+
+                    <a href="<%= ResolveUrl("~/Instructor_Quiz_Manage.aspx") %>"
+                       class="nav-link <%= GetNavClass("Instructor_Quiz_Manage") %>">Quizzes</a>
+
+                    <a href="<%= ResolveUrl("~/Instructor_Feedback.aspx") %>"
+                       class="nav-link <%= GetNavClass("Instructor_Feedback") %>">
+                        Feedback
+                        <asp:Label ID="lblFeedbackBadge" runat="server"
+                            CssClass="nav-badge" Text="" Visible="false" />
+                    </a>
+
+                    <div class="nav-divider"></div>
+
+                    <a href="<%= ResolveUrl("~/Instructor_Profile.aspx") %>"
+                       class="nav-link <%= GetNavClass("Instructor_Profile") %>">
+                        <asp:Label ID="lblTopbarInitial" runat="server" Text="I" />
+                        <asp:Label ID="lblTopbarName" runat="server" Text="Instructor" />
+                    </a>
+
+                    <%-- Sign Out: clear session and go to Guest homepage --%>
+                    <asp:LinkButton ID="btnSignOut" runat="server" CssClass="btn btn-xs"
+                        OnClick="btnSignOut_Click">Sign Out</asp:LinkButton>
+                </nav>
+
+                <button type="button" class="nav-toggle" id="navToggle"
+                    aria-expanded="false" aria-controls="topnav" aria-label="Toggle menu">
+                    <span class="nav-toggle-lines"></span>
+                </button>
+
+            </div>
+        </header>
+
+        <div class="page">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+        </div>
+
+    </form>
+
+    <script>
+        (function () {
+            var tb = document.getElementById('topbar');
+            window.addEventListener('scroll', function () {
+                tb.classList.toggle('topbar-shadow', window.scrollY > 10);
+            }, { passive: true });
+        })();
+
+        (function () {
+            var btn = document.getElementById('navToggle');
+            var nav = document.getElementById('topnav');
+            btn.addEventListener('click', function () {
+                var open = nav.classList.toggle('open');
+                btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+            });
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape') {
+                    nav.classList.remove('open');
+                    btn.setAttribute('aria-expanded', 'false');
+                }
+            });
+        })();
+    </script>
+</body>
+</html>

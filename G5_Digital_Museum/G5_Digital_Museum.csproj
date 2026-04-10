@@ -1,0 +1,693 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{7EB47293-631C-4CD3-8E4B-95FFF18AF898}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>G5_Digital_Museum</RootNamespace>
+    <AssemblyName>G5_Digital_Museum</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44381</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.2.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ScriptManager.MSAjax">
+      <HintPath>..\packages\Microsoft.AspNet.ScriptManager.MSAjax.5.0.0\lib\net45\Microsoft.ScriptManager.MSAjax.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ScriptManager.WebForms">
+      <HintPath>..\packages\Microsoft.AspNet.ScriptManager.WebForms.5.0.0\lib\net45\Microsoft.ScriptManager.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Web.Optimization.WebForms">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.WebForms.1.1.3\lib\net45\Microsoft.AspNet.Web.Optimization.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.FriendlyUrls">
+      <HintPath>..\packages\Microsoft.AspNet.FriendlyUrls.Core.1.0.2\lib\net45\Microsoft.AspNet.FriendlyUrls.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="About.aspx" />
+    <Content Include="admin_aspx\Admin_Dashboard.aspx" />
+    <Content Include="admin_aspx\Admin_Feedback.aspx" />
+    <Content Include="admin_aspx\Admin_ManageModules.aspx" />
+    <Content Include="admin_aspx\Admin_ManageUsers.aspx" />
+    <Content Include="admin_aspx\Admin_ManageWebsite.aspx" />
+    <Content Include="admin_aspx\Admin_Profile.aspx" />
+    <Content Include="admin_aspx\Admin_Settings.aspx" />
+    <Content Include="admin_aspx\Admin_SystemReports.aspx" />
+    <Content Include="Admin_Registration.aspx" />
+    <Content Include="Contact.aspx" />
+    <Content Include="Content\bootstrap-grid.css" />
+    <Content Include="Content\bootstrap-grid.min.css" />
+    <Content Include="Content\bootstrap-grid.rtl.css" />
+    <Content Include="Content\bootstrap-grid.rtl.min.css" />
+    <Content Include="Content\bootstrap-reboot.css" />
+    <Content Include="Content\bootstrap-reboot.min.css" />
+    <Content Include="Content\bootstrap-reboot.rtl.css" />
+    <Content Include="Content\bootstrap-reboot.rtl.min.css" />
+    <Content Include="Content\bootstrap-utilities.css" />
+    <Content Include="Content\bootstrap-utilities.min.css" />
+    <Content Include="Content\bootstrap-utilities.rtl.css" />
+    <Content Include="Content\bootstrap-utilities.rtl.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\bootstrap.rtl.css" />
+    <Content Include="Content\bootstrap.rtl.min.css" />
+    <Content Include="Content\Site.css" />
+    <Content Include="CSS\Instructor_css.css" />
+    <Content Include="CSS\Login.css" />
+    <Content Include="CSS\Member.css" />
+    <Content Include="css_file\admin.css" />
+    <Content Include="Default.aspx" />
+    <Content Include="favicon.ico" />
+    <Content Include="ForgotPassword.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="App_Data\MuseumDB.mdf" />
+    <Content Include="App_Data\MuseumDB_log.ldf">
+      <DependentUpon>MuseumDB.mdf</DependentUpon>
+    </Content>
+    <Content Include="Image\Exhibitions\041ea53a980746ecae444f1715e2ac8d.jpeg" />
+    <Content Include="Image\Exhibitions\1f35c970c65543eda47c78a37303a66c.jpeg" />
+    <Content Include="Image\Exhibitions\23cee0539a9b4e5aa7f3290d98bc3e42.jpg" />
+    <Content Include="Image\Exhibitions\27fe7c88336943139de49b64c7f6c42f.jpg" />
+    <Content Include="Image\Modules\04aebeb3e0d0427f80287db4f673a272.jpg" />
+    <Content Include="Image\Modules\2a38ff37c4a6415aba54a7f467f4663e.jpeg" />
+    <Content Include="Image\Modules\33cb248e75f444daae9a4de47dc946b8.jpg" />
+    <Content Include="Image\Modules\41f9e08567ac4bfea18b80869d198af0.jpg" />
+    <Content Include="Image\Modules\446edf55a0cc49998d63a68a4c38439b.jpg" />
+    <Content Include="Image\Modules\5609a185aedd42a19b222fb7d5d5b630.jpeg" />
+    <Content Include="Image\Modules\7b0943c6d68e486a899aeced2d3cf2ee.jpg" />
+    <Content Include="Image\Modules\852b5f188ff14b74b819ae8eb9b280c5.jpg" />
+    <Content Include="Image\Modules\9f6ecb0a76864938922c90fb5d70b29e.png" />
+    <Content Include="Image\Modules\a65a6985162a40bc826a71a463efd630.jpg" />
+    <Content Include="Image\Modules\a8c5df59ee6d4292b3c950ce96d30174.jpg" />
+    <Content Include="Image\Modules\aa20a63e5a324bea93285ff2a8489d05.jpg" />
+    <Content Include="Image\Modules\bfc0a336f344460da6dd3cf6b4dcbdca.jpeg" />
+    <Content Include="Image\Modules\c4bc960cae894fa7ab199eedd2021f4c.jpeg" />
+    <Content Include="Image\Modules\c62736cbed7f429dab8daedc4fb739f2.jpeg" />
+    <Content Include="Image\Modules\ebbc1673ffd8456c80dc8d0e213b66c6.jpeg" />
+    <Content Include="Image\Modules\fac7b5c2928e409e8c30258497104092.jpeg" />
+    <Content Include="Image\Quiz\109e5ae97ebe48c4802614c7bbfefe1d.jpg" />
+    <Content Include="Image\Quiz\1a1c7c4078be449fab339b7f3db592e2.jpg" />
+    <Content Include="Image\Quiz\1fdf29a320e3486e9c72a7ed54fd66b9.jpeg" />
+    <Content Include="Image\Quiz\22dd600d46e243b799745cf16c3aa34e.jpg" />
+    <Content Include="Image\Quiz\23ceea5d559a44a495db2e0e93f5b4d2.jpeg" />
+    <Content Include="Image\Quiz\24018f651e0940e49cd467eb0d9b1376.jpg" />
+    <Content Include="Image\Quiz\310a7d5c69124b439d08d0bf2c70f905.jpeg" />
+    <Content Include="Image\Quiz\35249dea5d3d4d2792d2c442037920b9.jpg" />
+    <Content Include="Image\Quiz\35911c81e47c4fa6ae707d13c641ffb2.jpeg" />
+    <Content Include="Image\Quiz\35de8b177cfe4d2ba1490b68de4f1962.jpeg" />
+    <Content Include="Image\Quiz\3822ff5b3bb04a54bd5ac2a9145cdc0c.jpeg" />
+    <Content Include="Image\Quiz\449df53b8d414f0389c307a38b09a268.jpeg" />
+    <Content Include="Image\Quiz\4ab530d593554be0ba15beb9c05502cf.jpeg" />
+    <Content Include="Image\Quiz\52b068954d23477fb6b3b89d132fa03f.jpg" />
+    <Content Include="Image\Quiz\5ae91c4658924ed08fa661cb2845f67c.jpg" />
+    <Content Include="Image\Quiz\6488c17b81c740d7bb1c9b11cc5de2af.jpeg" />
+    <Content Include="Image\Quiz\6755731c10dd4dcb99fa05f7b910bb24.jpg" />
+    <Content Include="Image\Quiz\7143f560738c4548bbd591d2c24434af.jpg" />
+    <Content Include="Image\Quiz\720fe71d4d1947dca73d88cea5bc8403.jpeg" />
+    <Content Include="Image\Quiz\8494eb18c9324e11b9a1b8c996fb2367.jpg" />
+    <Content Include="Image\Quiz\8b79d34f514f46478efe5b625cc24f9a.jpeg" />
+    <Content Include="Image\Quiz\8d1ec0631632479c8b48256bae97caeb.jpg" />
+    <Content Include="Image\Quiz\8ddea4fe83ed457b91d942083d575449.jpg" />
+    <Content Include="Image\Quiz\91baa193fca548869d479f9e6d27d082.jpg" />
+    <Content Include="Image\Quiz\9e9c4c2c8d424b8e8a0c1dd4eb8f64be.jpg" />
+    <Content Include="Image\Quiz\a1ddcb544ce04c2884044ed1038af413.jpg" />
+    <Content Include="Image\Quiz\a275abb72c4f4f42a9b2747e6d30473c.jpeg" />
+    <Content Include="Image\Quiz\a4e4e1900ef24d759b5664c41828ad51.jpeg" />
+    <Content Include="Image\Quiz\a5547fe5647a4afaa0690f21481b5c56.png" />
+    <Content Include="Image\Quiz\a84fb4f166504b30bb07a61f2d34e601.jpeg" />
+    <Content Include="Image\Quiz\aa1e693c8c6d4252b101ee081aeda745.jpeg" />
+    <Content Include="Image\Quiz\ab7a69ee3eac4fa4b94332be990bb789.jpeg" />
+    <Content Include="Image\Quiz\afd422cac5984e2492d26a0238e0cd3e.jpeg" />
+    <Content Include="Image\Quiz\b7385bc9c367466d87ab4b47ecf4b50b.jpg" />
+    <Content Include="Image\Quiz\bebea7060e3b4e44a21469b437061c13.jpg" />
+    <Content Include="Image\Quiz\bf1bbf3cae194e82ad567e46f2dda21f.jpeg" />
+    <Content Include="Image\Quiz\c09d469a767248c3a3a844436ab0f640.jpeg" />
+    <Content Include="Image\Quiz\c24e3fa2f5e442eba72c2e0797400bad.jpg" />
+    <Content Include="Image\Quiz\de3824c512454ebfa7b0a9017c9f1c82.jpg" />
+    <Content Include="Image\Quiz\e0485782cdfd4171bb6bf383afa6e001.jpeg" />
+    <Content Include="Image\Quiz\f361cd90e0ee4b76aa00bf3dd7ee6647.jpeg" />
+    <Content Include="Image\Quiz\f3ee1c2871de43df88683ecb3203a143.jpg" />
+    <Content Include="Image\Quiz\f8fdd630b5104cd0a7950f15a6e61c2a.jpg" />
+    <Content Include="Instructor_Exhibition_Manage.aspx" />
+    <Content Include="Instructor_Feedback.aspx" />
+    <Content Include="Instructor_Homepage.aspx" />
+    <Content Include="Instructor_Module_Manage.aspx" />
+    <Content Include="Instructor_Profile.aspx" />
+    <Content Include="Instructor_Quiz_Manage.aspx" />
+    <Content Include="Main_LoginPage.aspx" />
+    <Content Include="Member_AllExhibitions.aspx" />
+    <Content Include="Member_BrowseAndSearch.aspx" />
+    <Content Include="Member_CommentAndReview.aspx" />
+    <Content Include="Member_ExhibitionDetails.aspx" />
+    <Content Include="Member_ForgotPassword.aspx" />
+    <Content Include="Member_HomePage.aspx" />
+    <Content Include="Member_ManageProfile.aspx" />
+    <Content Include="Member_Modules.aspx" />
+    <Content Include="Member_ModulesContent.aspx" />
+    <Content Include="Member_Quiz.aspx" />
+    <Content Include="Member_Registration.aspx" />
+    <Content Include="Member_SaveToFavourite.aspx" />
+    <Content Include="Scripts\bootstrap.bundle.js" />
+    <Content Include="Scripts\bootstrap.bundle.min.js" />
+    <Content Include="Scripts\bootstrap.esm.js" />
+    <Content Include="Scripts\bootstrap.esm.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\bootstrap.min.js.map" />
+    <Content Include="Scripts\bootstrap.js.map" />
+    <Content Include="Scripts\bootstrap.esm.min.js.map" />
+    <Content Include="Scripts\bootstrap.esm.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.min.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.js.map" />
+    <Content Include="Content\bootstrap.rtl.min.css.map" />
+    <Content Include="Content\bootstrap.rtl.css.map" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-utilities.rtl.min.css.map" />
+    <Content Include="Content\bootstrap-utilities.rtl.css.map" />
+    <Content Include="Content\bootstrap-utilities.min.css.map" />
+    <Content Include="Content\bootstrap-utilities.css.map" />
+    <Content Include="Content\bootstrap-reboot.rtl.min.css.map" />
+    <Content Include="Content\bootstrap-reboot.rtl.css.map" />
+    <Content Include="Content\bootstrap-reboot.min.css.map" />
+    <Content Include="Content\bootstrap-reboot.css.map" />
+    <Content Include="Content\bootstrap-grid.rtl.min.css.map" />
+    <Content Include="Content\bootstrap-grid.rtl.css.map" />
+    <Content Include="Content\bootstrap-grid.min.css.map" />
+    <Content Include="Content\bootstrap-grid.css.map" />
+    <Content Include="Master\Instructor_Master.Master" />
+    <Content Include="admin_aspx\Admin_Master.Master" />
+    <Content Include="Image\.vs\Image.slnx\FileContentIndex\d638d61f-3f32-44af-9f3c-b2e965a76f7a.vsidx" />
+    <Content Include="Image\.vs\Image.slnx\v18\.wsuo" />
+    <Content Include="Image\.vs\Image.slnx\v18\DocumentLayout.json" />
+    <Content Include="Image\.vs\Image\CopilotIndices\18.4.105.37992\CodeChunks.db" />
+    <Content Include="Image\.vs\Image\CopilotIndices\18.4.105.37992\SemanticSymbols.db" />
+    <Content Include="Image\.vs\ProjectSettings.json" />
+    <Content Include="Image\.vs\slnx.sqlite" />
+    <Content Include="Image\.vs\VSWorkspaceState.json" />
+    <Content Include="Image\Quiz\44a532afebe142bfaf0e3745985dbb67.webp" />
+    <Content Include="Image\Quiz\845e3b1d41544427960398652441dc25.webp" />
+    <Content Include="Image\Quiz\d3019e894de448509e6dd55eeba41395.webp" />
+    <Content Include="Member_MasterPage.Master" />
+    <Content Include="Login_MasterPage.Master" />
+    <None Include="Scripts\jquery-3.7.0.intellisense.js" />
+    <Content Include="Scripts\jquery-3.7.0.js" />
+    <Content Include="Scripts\jquery-3.7.0.min.js" />
+    <Content Include="Scripts\jquery-3.7.0.slim.js" />
+    <Content Include="Scripts\jquery-3.7.0.slim.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\WebForms\DetailsView.js" />
+    <Content Include="Scripts\WebForms\Focus.js" />
+    <Content Include="Scripts\WebForms\GridView.js" />
+    <Content Include="Scripts\WebForms\Menu.js" />
+    <Content Include="Scripts\WebForms\MenuStandards.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjax.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxApplicationServices.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxComponentModel.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxCore.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxGlobalization.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxHistory.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxNetwork.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxSerialization.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxTimer.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxWebForms.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxWebServices.js" />
+    <Content Include="Scripts\WebForms\SmartNav.js" />
+    <Content Include="Scripts\WebForms\TreeView.js" />
+    <Content Include="Scripts\WebForms\WebForms.js" />
+    <Content Include="Scripts\WebForms\WebParts.js" />
+    <Content Include="Scripts\WebForms\WebUIValidation.js" />
+    <Content Include="Site.Master" />
+    <Content Include="ViewSwitcher.ascx" />
+    <Content Include="Web.config" />
+    <Content Include="Bundle.config" />
+    <Content Include="Site.Mobile.Master" />
+    <!-- ===== GUEST ROLE FILES ===== -->
+    <Content Include="GuestSite.Master" />
+    <Content Include="css\Guest.css" />
+    <Content Include="js\Guest.js" />
+    <Content Include="Guest_Homepage.aspx" />
+    <Content Include="Guest_Timeline.aspx" />
+    <Content Include="Guest_Gallery.aspx" />
+    <Content Include="Guest_About.aspx" />
+    <Content Include="Guest_Resources.aspx" />
+    <Content Include="Guest_Feedback.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="admin_aspx\Admin_Dashboard.aspx.cs">
+      <DependentUpon>Admin_Dashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin_aspx\Admin_Dashboard.aspx.designer.cs">
+      <DependentUpon>Admin_Dashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin_aspx\Admin_Feedback.aspx.cs">
+      <DependentUpon>Admin_Feedback.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin_aspx\Admin_Feedback.aspx.designer.cs">
+      <DependentUpon>Admin_Feedback.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin_aspx\Admin_ManageModules.aspx.cs">
+      <DependentUpon>Admin_ManageModules.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin_aspx\Admin_ManageModules.aspx.designer.cs">
+      <DependentUpon>Admin_ManageModules.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin_aspx\Admin_ManageUsers.aspx.cs">
+      <DependentUpon>Admin_ManageUsers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin_aspx\Admin_ManageUsers.aspx.designer.cs">
+      <DependentUpon>Admin_ManageUsers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin_aspx\Admin_ManageWebsite.aspx.cs">
+      <DependentUpon>Admin_ManageWebsite.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin_aspx\Admin_ManageWebsite.aspx.designer.cs">
+      <DependentUpon>Admin_ManageWebsite.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin_aspx\Admin_Master.Master.cs">
+      <DependentUpon>Admin_Master.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin_aspx\Admin_Master.Master.designer.cs">
+      <DependentUpon>Admin_Master.Master</DependentUpon>
+    </Compile>
+    <Compile Include="admin_aspx\Admin_Profile.aspx.cs">
+      <DependentUpon>Admin_Profile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin_aspx\Admin_Profile.aspx.designer.cs">
+      <DependentUpon>Admin_Profile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin_aspx\Admin_Settings.aspx.cs">
+      <DependentUpon>Admin_Settings.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin_aspx\Admin_Settings.aspx.designer.cs">
+      <DependentUpon>Admin_Settings.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin_aspx\Admin_SystemReports.aspx.cs">
+      <DependentUpon>Admin_SystemReports.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin_aspx\Admin_SystemReports.aspx.designer.cs">
+      <DependentUpon>Admin_SystemReports.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin_Registration.aspx.cs">
+      <DependentUpon>Admin_Registration.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin_Registration.aspx.designer.cs">
+      <DependentUpon>Admin_Registration.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="About.aspx.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="About.aspx.designer.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Contact.aspx.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contact.aspx.designer.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ForgotPassword.aspx.cs">
+      <DependentUpon>ForgotPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ForgotPassword.aspx.designer.cs">
+      <DependentUpon>ForgotPassword.aspx</DependentUpon>
+    </Compile>
+    <!-- ===== GUEST ROLE COMPILE ===== -->
+    <Compile Include="GuestSite.master.cs">
+      <DependentUpon>GuestSite.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GuestSite.master.designer.cs">
+      <DependentUpon>GuestSite.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Guest_Homepage.aspx.cs">
+      <DependentUpon>Guest_Homepage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Guest_Homepage.aspx.designer.cs">
+      <DependentUpon>Guest_Homepage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Guest_Timeline.aspx.cs">
+      <DependentUpon>Guest_Timeline.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Guest_Timeline.aspx.designer.cs">
+      <DependentUpon>Guest_Timeline.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Guest_Gallery.aspx.cs">
+      <DependentUpon>Guest_Gallery.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Guest_Gallery.aspx.designer.cs">
+      <DependentUpon>Guest_Gallery.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Guest_About.aspx.cs">
+      <DependentUpon>Guest_About.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Guest_About.aspx.designer.cs">
+      <DependentUpon>Guest_About.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Guest_Resources.aspx.cs">
+      <DependentUpon>Guest_Resources.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Guest_Resources.aspx.designer.cs">
+      <DependentUpon>Guest_Resources.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Guest_Feedback.aspx.cs">
+      <DependentUpon>Guest_Feedback.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Guest_Feedback.aspx.designer.cs">
+      <DependentUpon>Guest_Feedback.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="helpers\DataAccess.cs" />
+    <Compile Include="Instructor_Exhibition_Manage.aspx.cs">
+      <DependentUpon>Instructor_Exhibition_Manage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Instructor_Exhibition_Manage.aspx.designer.cs">
+      <DependentUpon>Instructor_Exhibition_Manage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Instructor_Feedback.aspx.cs">
+      <DependentUpon>Instructor_Feedback.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Instructor_Feedback.aspx.designer.cs">
+      <DependentUpon>Instructor_Feedback.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Instructor_Homepage.aspx.cs">
+      <DependentUpon>Instructor_Homepage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Instructor_Homepage.aspx.designer.cs">
+      <DependentUpon>Instructor_Homepage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Instructor_Module_Manage.aspx.cs">
+      <DependentUpon>Instructor_Module_Manage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Instructor_Module_Manage.aspx.designer.cs">
+      <DependentUpon>Instructor_Module_Manage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Instructor_Profile.aspx.cs">
+      <DependentUpon>Instructor_Profile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Instructor_Profile.aspx.designer.cs">
+      <DependentUpon>Instructor_Profile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Instructor_Quiz_Manage.aspx.cs">
+      <DependentUpon>Instructor_Quiz_Manage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Instructor_Quiz_Manage.aspx.designer.cs">
+      <DependentUpon>Instructor_Quiz_Manage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Login_MasterPage.Master.cs">
+      <DependentUpon>Login_MasterPage.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login_MasterPage.Master.designer.cs">
+      <DependentUpon>Login_MasterPage.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Main_LoginPage.aspx.cs">
+      <DependentUpon>Main_LoginPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Main_LoginPage.aspx.designer.cs">
+      <DependentUpon>Main_LoginPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Master\Instructor_Master.Master.cs">
+      <DependentUpon>Instructor_Master.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Master\Instructor_Master.Master.designer.cs">
+      <DependentUpon>Instructor_Master.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Member_AllExhibitions.aspx.cs">
+      <DependentUpon>Member_AllExhibitions.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Member_AllExhibitions.aspx.designer.cs">
+      <DependentUpon>Member_AllExhibitions.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Member_BrowseAndSearch.aspx.cs">
+      <DependentUpon>Member_BrowseAndSearch.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Member_BrowseAndSearch.aspx.designer.cs">
+      <DependentUpon>Member_BrowseAndSearch.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Member_CommentAndReview.aspx.cs">
+      <DependentUpon>Member_CommentAndReview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Member_CommentAndReview.aspx.designer.cs">
+      <DependentUpon>Member_CommentAndReview.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Member_ExhibitionDetails.aspx.cs">
+      <DependentUpon>Member_ExhibitionDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Member_ExhibitionDetails.aspx.designer.cs">
+      <DependentUpon>Member_ExhibitionDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Member_ForgotPassword.aspx.cs">
+      <DependentUpon>Member_ForgotPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Member_ForgotPassword.aspx.designer.cs">
+      <DependentUpon>Member_ForgotPassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Member_HomePage.aspx.cs">
+      <DependentUpon>Member_HomePage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Member_HomePage.aspx.designer.cs">
+      <DependentUpon>Member_HomePage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Member_ManageProfile.aspx.cs">
+      <DependentUpon>Member_ManageProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Member_ManageProfile.aspx.designer.cs">
+      <DependentUpon>Member_ManageProfile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Member_MasterPage.Master.cs">
+      <DependentUpon>Member_MasterPage.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Member_MasterPage.Master.designer.cs">
+      <DependentUpon>Member_MasterPage.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Member_Modules.aspx.cs">
+      <DependentUpon>Member_Modules.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Member_Modules.aspx.designer.cs">
+      <DependentUpon>Member_Modules.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Member_ModulesContent.aspx.cs">
+      <DependentUpon>Member_ModulesContent.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Member_ModulesContent.aspx.designer.cs">
+      <DependentUpon>Member_ModulesContent.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Member_Quiz.aspx.cs">
+      <DependentUpon>Member_Quiz.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Member_Quiz.aspx.designer.cs">
+      <DependentUpon>Member_Quiz.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Member_Registration.aspx.cs">
+      <DependentUpon>Member_Registration.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Member_Registration.aspx.designer.cs">
+      <DependentUpon>Member_Registration.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Member_SaveToFavourite.aspx.cs">
+      <DependentUpon>Member_SaveToFavourite.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Member_SaveToFavourite.aspx.designer.cs">
+      <DependentUpon>Member_SaveToFavourite.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Master.designer.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Site.Mobile.Master.cs">
+      <DependentUpon>Site.Mobile.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Mobile.Master.designer.cs">
+      <DependentUpon>Site.Mobile.Master</DependentUpon>
+    </Compile>
+    <Compile Include="ViewSwitcher.ascx.cs">
+      <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewSwitcher.ascx.designer.cs">
+      <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.7.0.slim.min.map" />
+    <Content Include="Scripts\jquery-3.7.0.min.map" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>51932</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44381/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+</Project>

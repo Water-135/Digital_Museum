@@ -1,0 +1,81 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Admin_Master.master.cs" Inherits="G5_Digital_Museum.Admin_ASPX.Admin_Master" %>
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Panel | Digital Museum</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Source+Sans+Pro:wght@300;400;600;700&display=swap" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="<%= ResolveUrl("~/CSS_file/admin.css") %>" rel="stylesheet" />
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server" />
+</head>
+<body>
+    <form id="form1" runat="server">
+
+        <nav class="topbar" aria-label="Admin Navigation">
+            <div class="topbar-brand">
+                <div class="topbar-logo-icon"><span>&#x1F56F;</span></div>
+                <div>
+                    <div class="topbar-title">Digital Museum</div>
+                    <div class="topbar-sub">Admin Panel</div>
+                </div>
+            </div>
+
+            <ul class="topbar-nav">
+                <li><a class="topbar-link" href="Admin_Dashboard.aspx">Dashboard</a></li>
+                <li><a class="topbar-link" href="Admin_ManageUsers.aspx">Manage Users</a></li>
+                <li><a class="topbar-link" href="Admin_ManageWebsite.aspx">Manage Website</a></li>
+                <li><a class="topbar-link" href="Admin_ManageModules.aspx">Manage Modules</a></li>
+                <li><a class="topbar-link" href="Admin_Settings.aspx">Settings</a></li>
+                <li><a class="topbar-link" href="Admin_SystemReports.aspx">System Reports</a></li>
+                <li><a class="topbar-link" href="Admin_Feedback.aspx">Feedback</a></li>
+            </ul>
+
+            <div class="topbar-right">
+              <a href="Admin_Profile.aspx" class="topbar-profile-link">
+                    <div class="topbar-profile">
+                        <div class="topbar-avatar">
+                            <%= Session["AdminName"] != null ? Session["AdminName"].ToString().Substring(0,1).ToUpper() : "A" %>
+                        </div>
+                        <div>
+                            <div class="topbar-profile-name">
+                                <%= Session["AdminName"] ?? "Admin" %>
+                            </div>
+                            <div class="topbar-profile-role">
+                                <%= Session["AdminRole"] ?? "Administrator" %>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <a href="../Main_LoginPage.aspx" class="topbar-logout">Logout</a>
+            </div>
+        </nav>
+
+        <header class="page-header">
+            <asp:ContentPlaceHolder ID="PageTitle" runat="server">
+                <h2>PAGE</h2>
+            </asp:ContentPlaceHolder>
+        </header>
+
+        <main class="admin-content">
+            <section>
+                <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+            </section>
+            <footer class="admin-footer">
+                <p>&copy; 2025 Digital Museum: Nanjing Massacre &mdash; Group 5 | CT050-3-2-WAPP | Asia Pacific University</p>
+            </footer>
+        </main>
+
+    </form>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        var currentPage = window.location.pathname.split('/').pop().toLowerCase();
+        document.querySelectorAll('.topbar-link').forEach(function (link) {
+            if (link.getAttribute('href').toLowerCase() === currentPage)
+                link.classList.add('active');
+        });
+    </script>
+</body>
+</html>

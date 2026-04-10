@@ -1,0 +1,31 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Login_MasterPage.master.cs" Inherits="G5_Digital_Museum.Login_MasterPage" %>
+
+<!DOCTYPE html>
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <title><%: Page.Title %></title>
+
+    <link href="<%= ResolveUrl("~/CSS/Login.css") %>" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Source+Sans+3:wght@300;400&display=swap" rel="stylesheet">
+
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server" />
+</head>
+
+<body>
+    <form id="form1" runat="server">
+
+        <a href="<%= ResolveUrl("~/Guest_Homepage.aspx") %>" class="top-logo">
+            <div class="logo-icon">M</div>
+
+            <div class="logo-text">
+                <div class="title">Digital Museum</div>
+                <div class="subtitle">NANJING MASSACRE 1937</div>
+            </div>
+        </a>
+
+        <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+
+    </form>
+</body>
+</html>
